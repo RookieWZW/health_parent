@@ -1,0 +1,14 @@
+com\RookieWZW\constant\MessageConstant.class
+com\RookieWZW\entity\QueryPageBean.class
+com\RookieWZW\pojo\Permission.class
+com\RookieWZW\pojo\Order.class
+com\RookieWZW\pojo\Setmeal.class
+com\RookieWZW\entity\PageResult.class
+com\RookieWZW\pojo\Member.class
+com\RookieWZW\pojo\OrderSetting.class
+com\RookieWZW\pojo\Role.class
+com\RookieWZW\pojo\User.class
+com\RookieWZW\pojo\CheckItem.class
+com\RookieWZW\entity\Result.class
+com\RookieWZW\pojo\Menu.class
+com\RookieWZW\pojo\CheckGroup.class

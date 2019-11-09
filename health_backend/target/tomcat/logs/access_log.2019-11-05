@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [05/Nov/2019:21:07:20 +0800] "GET /pages/main.html HTTP/1.1" 304 - http-bio-82-exec-1 62
+0:0:0:0:0:0:0:1 - - [05/Nov/2019:21:07:20 +0800] "GET /plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 404 1041 http-bio-82-exec-3 9
+0:0:0:0:0:0:0:1 - - [05/Nov/2019:21:07:20 +0800] "GET /plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 404 1041 http-bio-82-exec-5 2
+0:0:0:0:0:0:0:1 - - [05/Nov/2019:21:07:22 +0800] "POST /checkitem/findPage.do HTTP/1.1" 200 1383 http-bio-82-exec-6 1916
+0:0:0:0:0:0:0:1 - - [05/Nov/2019:21:09:01 +0800] "GET /checkitem/findById.do?id=28 HTTP/1.1" 200 177 http-bio-82-exec-8 235
+0:0:0:0:0:0:0:1 - - [05/Nov/2019:21:09:09 +0800] "GET /checkitem/findById.do?id=32 HTTP/1.1" 200 183 http-bio-82-exec-9 29
