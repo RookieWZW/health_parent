@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="618bc0b2-1940-45d5-aba5-23cbaf021e2d" name="Default Changelist" comment="" />
+    <list default="true" id="618bc0b2-1940-45d5-aba5-23cbaf021e2d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/health_jobs_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/health_jobs_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_jobs_2_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_backend/src/main/java/com/RookieWZW/controller/SetmealController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_backend/src/main/resources/spring-redis.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_backend/src/main/webapp/pages/setmeal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_common/src/main/java/com/RookieWZW/QiniuUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_common/src/main/java/com/RookieWZW/constant/RedisConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_interface/src/main/java/com/RookieWZW/service/SetmealService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/health_jobs.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/src/main/java/com/RookieWZW/jobs/ClearImgJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/src/main/resources/applicationContext-jobs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/src/main/resources/applicationContext-redis.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_jobs/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_service_provider/src/main/java/com/RookieWZW/dao/SetmealDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_service_provider/src/main/java/com/RookieWZW/service/impl/SetmealServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_service_provider/src/main/resources/com/RookieWZW/dao/SetmealDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_service_provider/src/main/resources/spring-redis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_backend/src/main/java/com/RookieWZW/controller/CheckGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/health_backend/src/main/java/com/RookieWZW/controller/CheckGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_backend/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_backend/src/main/resources/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_interface/src/main/java/com/RookieWZW/service/CheckGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/health_interface/src/main/java/com/RookieWZW/service/CheckGroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_service_provider/src/main/java/com/RookieWZW/dao/CheckGroupDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/health_service_provider/src/main/java/com/RookieWZW/dao/CheckGroupDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_service_provider/src/main/java/com/RookieWZW/service/impl/CheckGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/health_service_provider/src/main/java/com/RookieWZW/service/impl/CheckGroupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_service_provider/src/main/resources/com/RookieWZW/dao/CheckGroupDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_service_provider/src/main/resources/com/RookieWZW/dao/CheckGroupDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,10 +49,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -31,20 +72,32 @@
     </option>
   </component>
   <component name="ProjectId" id="1TCIR0sicF5ChJWUty284vB75Tu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/health_backend/src/main/webapp/pages" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/health_jobs/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/health_jobs/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\IDEA\health_parent\health_jobs\src\main\resources" />
+      <recent name="F:\IDEA\health_parent\health_service_provider\src\main\resources" />
+      <recent name="F:\IDEA\health_parent\health_backend\src\main\resources" />
       <recent name="F:\IDEA\health_parent\health_backend\src\main\webapp\pages" />
     </key>
   </component>
@@ -128,10 +181,36 @@
       <updated>1572957638625</updated>
       <workItem from="1572957643984" duration="3817000" />
       <workItem from="1573039249721" duration="8551000" />
+      <workItem from="1573284862692" duration="5727000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/health_interface/src/main/java/com/RookieWZW/service/CheckGroupService.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

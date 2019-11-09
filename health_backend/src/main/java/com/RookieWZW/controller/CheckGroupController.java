@@ -80,4 +80,15 @@ public class CheckGroupController {
         }
         return new Result(true,MessageConstant.EDIT_CHECKGROUP_SUCCESS);
     }
+
+    @RequestMapping("/findAll")
+    public Result findAll(){
+        List<CheckGroup> checkGroupList = checkGroupService.findAll();
+        if (checkGroupList!=null && checkGroupList.size()>0){
+            Result result = new Result(true,MessageConstant.QUERY_CHECKGROUP_SUCCESS);
+            result.setData(checkGroupList);
+            return result;
+        }
+        return new Result(false,MessageConstant.QUERY_CHECKGROUP_FAIL);
+    }
 }
