@@ -1,4 +1,4 @@
-package com.RookieWZW;
+package com.RookieWZW.utils;
 
 import com.google.gson.Gson;
 import com.qiniu.common.QiniuException;
