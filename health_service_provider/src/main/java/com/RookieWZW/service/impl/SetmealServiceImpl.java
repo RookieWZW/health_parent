@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import redis.clients.jedis.JedisPool;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -44,6 +45,16 @@ public class SetmealServiceImpl implements SetmealService {
         PageHelper.startPage(currentPage, pageSize);
         Page<Setmeal> page = setmealDao.selectByCondition(queryString);
         return new PageResult(page.getTotal(), page.getResult());
+    }
+
+    @Override
+    public List<Setmeal> findAll() {
+        return setmealDao.findAll();
+    }
+
+    @Override
+    public Setmeal findById(Integer id) {
+        return setmealDao.findById(id);
     }
 
     private void savePic2Redis(String pic) {
