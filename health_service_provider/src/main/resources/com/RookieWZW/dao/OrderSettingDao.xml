@@ -19,4 +19,12 @@
     <select id="getOrderSettingByMonth" parameterType="hashmap" resultType="com.RookieWZW.pojo.OrderSetting">
         select * from t_ordersetting where orderDate between  #{orderBegin} and #{orderEnd}
     </select>
+
+    <select id="findByOrderDate" parameterType="date" resultType="com.RookieWZW.pojo.OrderSetting">
+        select * from t_ordersetting where orderDate=#{orderDate}
+    </select>
+
+    <update id="editReservationsByOrderDate" parameterType="com.RookieWZW.pojo.OrderSetting">
+        update t_ordersetting set reservation = #{reservations} where orderDate = #{orderDate}
+    </update>
 </mapper>
