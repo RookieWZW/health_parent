@@ -36,7 +36,7 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao;
 
     @Override
-    public Result Order(Map map) throws Exception {
+    public Result order(Map map) throws Exception {
 
         String orderDate = (String) map.get("orderDate");
         Date date = DateUtils.parseString2Date(orderDate);
@@ -85,7 +85,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Map findById(Integer id) {
+    public Map findById(Integer id) throws Exception {
         Map map = orderDao.findById4Detail(id);
         if (map != null){
             Date orderDate = (Date) map.get("orderDate");

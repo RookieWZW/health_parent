@@ -4,9 +4,13 @@ import com.RookieWZW.constant.MessageConstant;
 import com.RookieWZW.entity.Result;
 import com.RookieWZW.pojo.Setmeal;
 import com.RookieWZW.service.SetmealService;
+import com.RookieWZW.utils.SMSUtils;
+import com.RookieWZW.utils.ValidateCodeUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sun.plugin2.message.Message;
 
 import java.util.List;
 
@@ -22,6 +26,7 @@ public class SetmealController {
 
     @Reference
     private SetmealService setmealService;
+
 
     @RequestMapping("/getSetmeal")
     public Result getSetmeal(){
@@ -43,4 +48,6 @@ public class SetmealController {
             return new Result(false,MessageConstant.QUERY_SETMEAL_FAIL);
         }
     }
+
+
 }

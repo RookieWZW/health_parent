@@ -9,6 +9,7 @@ import com.RookieWZW.utils.SMSUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.aliyuncs.exceptions.ClientException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.JedisPool;
@@ -32,7 +33,7 @@ public class OrderController {
     private JedisPool jedisPool;
 
     @RequestMapping("/submit")
-    public Result submitOrder(@RequestMapping Map map){
+    public Result submitOrder(@RequestBody Map map){
         String telephone = (String) map.get("telephone");
 
         String codeInRedis = jedisPool.getResource().get(
