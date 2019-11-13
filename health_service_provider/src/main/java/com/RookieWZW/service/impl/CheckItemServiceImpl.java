@@ -22,15 +22,17 @@ public class CheckItemServiceImpl implements CheckItemService {
     //注入DAO对象
     @Autowired
     private CheckItemDao checkItemDao;
+    @Override
     public void add(CheckItem checkItem) {
         checkItemDao.add(checkItem);
     }
 
-    //检查项分页查询
+
+    @Override
     public PageResult pageQuery(QueryPageBean queryPageBean) {
         Integer currentPage = queryPageBean.getCurrentPage();
         Integer pageSize = queryPageBean.getPageSize();
-        String queryString = queryPageBean.getQueryString();//查询条件
+        String queryString = queryPageBean.getQueryString();
         //完成分页查询，基于mybatis框架提供的分页助手插件完成
         PageHelper.startPage(currentPage,pageSize);
         //select * from t_checkitem limit 0,10
@@ -41,6 +43,7 @@ public class CheckItemServiceImpl implements CheckItemService {
     }
 
     //根据ID删除检查项
+    @Override
     public void deleteById(Integer id) {
         //判断当前检查项是否已经关联到检查组
         long count = checkItemDao.findCountByCheckItemId(id);
@@ -51,6 +54,7 @@ public class CheckItemServiceImpl implements CheckItemService {
         checkItemDao.deleteById(id);
     }
 
+    @Override
     public void edit(CheckItem checkItem) {
         checkItemDao.edit(checkItem);
     }

@@ -7,6 +7,7 @@ import com.RookieWZW.entity.QueryPageBean;
 import com.RookieWZW.entity.Result;
 import com.RookieWZW.pojo.CheckItem;
 import com.RookieWZW.service.CheckItemService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ public class CheckItemController {
     private CheckItemService checkItemService;
 
     //新增检查项
+    @PreAuthorize("hasAuthority('CHECKITEM_ADD')")
     @RequestMapping("/add")
     public Result add(@RequestBody CheckItem checkItem){
         try{
@@ -38,6 +40,7 @@ public class CheckItemController {
     }
 
     //检查项分页查询
+    @PreAuthorize("hasAuthority('CHECKITEM_QUERY')")
     @RequestMapping("/findPage")
     public PageResult findPage(@RequestBody QueryPageBean queryPageBean){
         PageResult pageResult = checkItemService.pageQuery(queryPageBean);
@@ -45,6 +48,7 @@ public class CheckItemController {
     }
 
     //删除检查项
+    @PreAuthorize("hasAuthority('CHECKITEM_DELETE')")
     @RequestMapping("/delete")
     public Result delete(Integer id){
         try{
@@ -58,6 +62,7 @@ public class CheckItemController {
     }
 
     //编辑检查项
+    @PreAuthorize("hasAuthority('CHECKITEM_EDIT')")
     @RequestMapping("/edit")
     public Result edit(@RequestBody CheckItem checkItem){
         try{

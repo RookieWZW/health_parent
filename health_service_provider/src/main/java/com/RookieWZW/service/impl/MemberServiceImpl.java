@@ -8,6 +8,9 @@ import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @program: health_parent
  * @description: 成员服务
@@ -32,5 +35,16 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public Member findByTelephone(String telephone) {
         return memberDao.findByTelephone(telephone);
+    }
+
+    @Override
+    public List<Integer> findMemberCountByMonth(List<String> month) {
+        List<Integer> list = new ArrayList<>();
+        for (String m : month) {
+            m = m+".31";
+            Integer count = memberDao.findMemberCountBeforeDate(m);
+            list.add(count);
+        }
+        return list
     }
 }
