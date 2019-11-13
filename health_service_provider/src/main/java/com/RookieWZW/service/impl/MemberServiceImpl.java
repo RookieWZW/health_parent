@@ -19,14 +19,14 @@ import java.util.List;
  */
 @Service(interfaceClass = MemberService.class)
 @Transactional
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
     @Autowired
     private MemberDao memberDao;
 
     @Override
     public void add(Member member) {
-        if (member.getPassword()!=null){
+        if (member.getPassword() != null) {
             member.setPassword(MD5Utils.md5(member.getPassword()));
         }
         memberDao.add(member);
@@ -41,10 +41,10 @@ public class MemberServiceImpl implements MemberService{
     public List<Integer> findMemberCountByMonth(List<String> month) {
         List<Integer> list = new ArrayList<>();
         for (String m : month) {
-            m = m+".31";
+            m = m + ".31";
             Integer count = memberDao.findMemberCountBeforeDate(m);
             list.add(count);
         }
-        return list
+        return list;
     }
 }

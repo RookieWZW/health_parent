@@ -4,6 +4,7 @@ import com.RookieWZW.entity.PageResult;
 import com.RookieWZW.pojo.Setmeal;
 
 import java.util.List;
+import java.util.Map;
 
 public interface SetmealService {
     public void add(Setmeal setmeal, Integer[] checkgroupIds);
@@ -13,4 +14,6 @@ public interface SetmealService {
     List<Setmeal> findAll();
 
     Setmeal findById(Integer id);
+
+    List<Map<String, Object>> findSetmealCount();
 }
