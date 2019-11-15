@@ -2,6 +2,7 @@ package com.RookieWZW.service.impl;
 
 import com.RookieWZW.dao.CheckGroupDao;
 import com.RookieWZW.entity.PageResult;
+import com.RookieWZW.entity.QueryPageBean;
 import com.RookieWZW.pojo.CheckGroup;
 import com.RookieWZW.pojo.CheckItem;
 import com.RookieWZW.service.CheckGroupService;
@@ -35,9 +36,9 @@ public class CheckGroupServiceImpl implements CheckGroupService {
     }
 
     @Override
-    public PageResult pageQuery(Integer currentPage, Integer pageSize, String queryString) {
-        PageHelper.startPage(currentPage, pageSize);
-        Page<CheckGroup> page = checkGroupDao.selectByCondition(queryString);
+    public PageResult pageQuery(QueryPageBean queryPageBean) {
+        PageHelper.startPage(queryPageBean.getCurrentPage(),queryPageBean.getPageSize());
+        Page<CheckGroup> page = checkGroupDao.selectByCondition(queryPageBean.getQueryString());
         return new PageResult(page.getTotal(), page.getResult());
     }
 

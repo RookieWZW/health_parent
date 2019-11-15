@@ -3,28 +3,34 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.RookieWZW.dao.OrderSettingDao">
     <insert id="add" parameterType="com.RookieWZW.pojo.OrderSetting">
-        insert into t_orderSetting(orderDate,number,reservations)
-        values
-        (#{orderDate},#{number},#{reservations})
+        insert into t_ordersetting
+      		(orderDate,number,reservations)
+                      values
+      		(#{orderDate},#{number},#{reservations})
     </insert>
 
     <update id="editNumberByOrderDate" parameterType="com.RookieWZW.pojo.OrderSetting">
-        update t_ordersetting set number = #{number} where orderDate = #{orderDate}
+        update t_ordersetting
+          set number = #{number}
+          where orderDate = #{orderDate}
     </update>
 
-    <select id="findCountByOrderDate" parameterType="java.util.Date" resultType="long">
-        select count(*) from t_ordersetting where orderDate = #{orderDate}
-    </select>n
-
-    <select id="getOrderSettingByMonth" parameterType="hashmap" resultType="com.RookieWZW.pojo.OrderSetting">
-        select * from t_ordersetting where orderDate between  #{orderBegin} and #{orderEnd}
+    <select id="findCountByOrderDate" parameterType="date" resultType="long">
+        select count(id) from t_ordersetting where orderDate = #{orderDate}
     </select>
 
-    <select id="findByOrderDate" parameterType="date" resultType="com.RookieWZW.pojo.OrderSetting">
-        select * from t_ordersetting where orderDate=#{orderDate}
+    <!--根据日期范围查询-->
+    <select id="getOrderSettingByMonth" parameterType="map" resultType="com.RookieWZW.pojo.OrderSetting">
+        select * from t_ordersetting where orderDate between #{begin} and #{end}
     </select>
 
+    <!--根据预约日期更新已预约人数-->
     <update id="editReservationsByOrderDate" parameterType="com.RookieWZW.pojo.OrderSetting">
-        update t_ordersetting set reservation = #{reservations} where orderDate = #{orderDate}
+        update t_ordersetting set reservations = #{reservations} where orderDate = #{orderDate}
     </update>
+
+    <!--根据日期查询预约设置信息-->
+    <select id="findByOrderDate" parameterType="date" resultType="com.RookieWZW.pojo.OrderSetting">
+        select * from t_ordersetting where orderDate = #{orderDate}
+    </select>
 </mapper>

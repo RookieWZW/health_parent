@@ -1,6 +1,6 @@
 package com.RookieWZW.controller;
 
-import com.RookieWZW.QiniuUtils;
+
 import com.RookieWZW.constant.MessageConstant;
 import com.RookieWZW.constant.RedisConstant;
 import com.RookieWZW.entity.PageResult;
@@ -8,6 +8,7 @@ import com.RookieWZW.entity.QueryPageBean;
 import com.RookieWZW.entity.Result;
 import com.RookieWZW.pojo.Setmeal;
 import com.RookieWZW.service.SetmealService;
+import com.RookieWZW.utils.QiniuUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

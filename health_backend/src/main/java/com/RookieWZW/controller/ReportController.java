@@ -41,28 +41,28 @@ public class ReportController {
     private ReportService reportService;
 
     @RequestMapping("/getMemberReport")
-    public Result getMemberReport(){
+    public Result getMemberReport() {
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MONTH,-12);
+        calendar.add(Calendar.MONTH, -12);
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 12; i++) {
-            calendar.add(Calendar.MONTH,1);
+            calendar.add(Calendar.MONTH, 1);
             list.add(new SimpleDateFormat("yyyy.MM").format(calendar.getTime()));
         }
 
-        Map<String,Object> map = new HashMap<>();
-        map.put("month",list);
+        Map<String, Object> map = new HashMap<>();
+        map.put("month", list);
         List<Integer> memberCount = memberService.findMemberCountByMonth(list);
-        map.put("memberCount",memberCount);
-        return new Result(true,MessageConstant.GET_MEMBER_NUMBER_REPORT_SUCCESS,map);
+        map.put("memberCount", memberCount);
+        return new Result(true, MessageConstant.GET_MEMBER_NUMBER_REPORT_SUCCESS, map);
     }
 
     @RequestMapping("/getSetmealReport")
-    public Result getSetmealReport(){
-        List<Map<String,Object>> list = setmealService.findSetmealCount();
+    public Result getSetmealReport() {
+        List<Map<String, Object>> list = setmealService.findSetmealCount();
 
-        Map<String,Object> map = new HashMap<>();
-        map.put("setmealCount",list);
+        Map<String, Object> map = new HashMap<>();
+        map.put("setmealCount", list);
 
         List<String> setmealNames = new ArrayList<>();
         for (Map<String, Object> m :
@@ -70,26 +70,26 @@ public class ReportController {
             String name = (String) m.get("name");
             setmealNames.add(name);
         }
-        map.put("setmealNames",setmealNames);
+        map.put("setmealNames", setmealNames);
 
-        return new Result(true,MessageConstant.GET_SETMEAL_COUNT_REPORT_SUCCESS,map);
+        return new Result(true, MessageConstant.GET_SETMEAL_COUNT_REPORT_SUCCESS, map);
     }
 
     @RequestMapping("/getBusinessReportData")
-    public Result getBusinessReportData(){
+    public Result getBusinessReportData() {
         try {
-            Map<String,Object> result = reportService.getBusinessReport();
-            return new Result(true,MessageConstant.GET_BUSINESS_REPORT_SUCCESS,result);
-        }catch (Exception e){
+            Map<String, Object> result = reportService.getBusinessReport();
+            return new Result(true, MessageConstant.GET_BUSINESS_REPORT_SUCCESS, result);
+        } catch (Exception e) {
             e.printStackTrace();
-            return new Result(false,MessageConstant.GET_BUSINESS_REPORT_FAIL);
+            return new Result(false, MessageConstant.GET_BUSINESS_REPORT_FAIL);
         }
     }
 
     @RequestMapping("/exportBusinessReport")
-    public Result exportBusinessReport(HttpServletRequest request, HttpServletResponse response){
+    public Result exportBusinessReport(HttpServletRequest request, HttpServletResponse response) {
         try {
-            Map<String,Object> result = reportService.getBusinessReport();
+            Map<String, Object> result = reportService.getBusinessReport();
             String reportDate = (String) result.get("reportDate");
             Integer todayNewMember = (Integer) result.get("todayNewMember");
             Integer totalMember = (Integer) result.get("totalMember");
@@ -111,7 +111,7 @@ public class ReportController {
             List<Map> hotSetmeal = (List<Map>) result.get("hotSetmeal");
 
 
-            String templateRealPath = request.getSession().getServletContext().getRealPath("template")+ File.separator+"report_template.xlsx";
+            String templateRealPath = request.getSession().getServletContext().getRealPath("template") + File.separator + "report_template.xlsx";
 
             XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(new File(templateRealPath)));
             XSSFSheet sheet = workbook.getSheetAt(0);
@@ -133,11 +133,11 @@ public class ReportController {
             row.getCell(5).setCellValue(thisMonthOrderNumber);//本月预约数
             row.getCell(7).setCellValue(thisMonthVisitsNumber);//本月到诊数
             int rowNum = 12;
-            for(Map map : hotSetmeal){//热门套餐
+            for (Map map : hotSetmeal) {//热门套餐
                 String name = (String) map.get("name");
                 Long setmeal_count = (Long) map.get("setmeal_count");
                 BigDecimal proportion = (BigDecimal) map.get("proportion");
-                row = sheet.getRow(rowNum ++);
+                row = sheet.getRow(rowNum++);
                 row.getCell(4).setCellValue(name);//套餐名称
                 row.getCell(5).setCellValue(setmeal_count);//预约数量
                 row.getCell(6).setCellValue(proportion.doubleValue());//占比
@@ -145,19 +145,18 @@ public class ReportController {
 
             ServletOutputStream out = response.getOutputStream();
             response.setContentType("application/vnd.ms‐excel");
-            response.setHeader("content‐Disposition","attachment;filename=report.xlsx");
+            response.setHeader("content‐Disposition", "attachment;filename=report.xlsx");
             workbook.write(out);
             out.flush();
             out.close();
             workbook.close();
             return null;
 
-        }catch (Exception e){
-            return new Result(false, MessageConstant.GET_BUSINESS_REPORT_FAIL,null);
-        }
+        } catch (Exception e) {
+            return new Result(false, MessageConstant.GET_BUSINESS_REPORT_FAIL, null);
         }
     }
-
-
-
 }
+
+
+

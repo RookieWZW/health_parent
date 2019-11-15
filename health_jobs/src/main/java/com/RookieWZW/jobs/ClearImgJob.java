@@ -1,13 +1,13 @@
 package com.RookieWZW.jobs;
 
-import com.RookieWZW.QiniuUtils;
+import com.RookieWZW.utils.QiniuUtils;
 import com.RookieWZW.constant.RedisConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.JedisPool;
 
 import java.util.Set;
 
-/**
+/**U
  * @program: health_parent
  * @description: 自定义Job，用于定时清理垃圾图片
  * @author: RookieWZW

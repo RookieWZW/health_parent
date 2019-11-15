@@ -46,9 +46,10 @@ public class OrderSettingServiceImpl implements OrderSettingService {
         String dateBegin = date + "-1";
         String dateEnd = date + "-31";
         Map map = new HashMap();
-        map.put("dateBegin", dateBegin);
-        map.put("dateEnd", dateEnd);
+        map.put("begin", dateBegin);
+        map.put("end", dateEnd);
         List<OrderSetting> list = orderSettingDao.getOrderSettingByMonth(map);
+        System.out.println("-------------------------------"+list);
         List<Map> data = new ArrayList<>();
         for (OrderSetting orderSetting : list) {
             Map orderSettingMap = new HashMap();

@@ -38,13 +38,8 @@ public class CheckGroupController {
     }
 
     @RequestMapping("/findPage")
-    public PageResult findPage(@RequestBody QueryPageBean queryPageBean) {
-        PageResult pageResult = checkGroupService.pageQuery(
-                queryPageBean.getCurrentPage(),
-                queryPageBean.getPageSize(),
-                queryPageBean.getQueryString()
-        );
-        return pageResult;
+    public PageResult findPage(@RequestBody QueryPageBean queryPageBean){
+        return checkGroupService.pageQuery(queryPageBean);
     }
 
     @RequestMapping("/findById")
